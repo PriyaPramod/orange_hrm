@@ -1,0 +1,60 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "DESKTOP-JAMBUR3",
+    "children" : [ {
+      "name" : "4360-MainThread",
+      "children" : [ {
+        "name" : "test_datda",
+        "uid" : "4a7ef141bac7923e",
+        "parentUid" : "9d2e943da88fea7ee35ea741dcbe4312",
+        "status" : "passed",
+        "time" : {
+          "start" : 1565435343301,
+          "stop" : 1565435343301,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "9d2e943da88fea7ee35ea741dcbe4312"
+    }, {
+      "name" : "1076-MainThread",
+      "children" : [ {
+        "name" : "test_datda",
+        "uid" : "39689e0c72711899",
+        "parentUid" : "6437ed6b50646e462c668eeaafb954af",
+        "status" : "passed",
+        "time" : {
+          "start" : 1565435770668,
+          "stop" : 1565435770668,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "6437ed6b50646e462c668eeaafb954af"
+    }, {
+      "name" : "12940-MainThread",
+      "children" : [ {
+        "name" : "test_datda",
+        "uid" : "76bfd77d5b8e5329",
+        "parentUid" : "2e0078f7f198e4b93cb494408b9ddede",
+        "status" : "passed",
+        "time" : {
+          "start" : 1565435655870,
+          "stop" : 1565435655874,
+          "duration" : 4
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "2e0078f7f198e4b93cb494408b9ddede"
+    } ],
+    "uid" : "20f58f246004df388a98625f9e186941"
+  } ]
+}
