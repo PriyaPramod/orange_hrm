@@ -1,0 +1,4 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Sat Aug 10 16:46:10 IST 2019","Sat Aug 10 16:46:10 IST 2019","0","test_scripts.test_dashboard","test_dashboard","","","","test_datda",""
+"passed","Fri Aug 16 08:53:08 IST 2019","Fri Aug 16 08:53:21 IST 2019","12286","test_scripts.test_login","test_login","TestLogin","","","test_tc_001_invalid_login",""
+"passed","Fri Aug 16 08:36:16 IST 2019","Fri Aug 16 08:36:28 IST 2019","11749","test_scripts.test_login","test_login","TestLogin","","","test_TC_001_invalid_login",""

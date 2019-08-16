@@ -1,0 +1,26 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "name" : "categories",
+  "children" : [ {
+    "name" : "Test defects",
+    "children" : [ {
+      "name" : "TypeError: get_text() missing 1 required positional argument: 'value'",
+      "children" : [ {
+        "name" : "test_tc_001_invalid_login",
+        "uid" : "64a434b677bd29b7",
+        "parentUid" : "15dfcbfc7bb59828c1cf01efcffd0c27",
+        "status" : "broken",
+        "time" : {
+          "start" : 1565925468658,
+          "stop" : 1565925475572,
+          "duration" : 6914
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "15dfcbfc7bb59828c1cf01efcffd0c27"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  } ]
+}
