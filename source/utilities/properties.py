@@ -1,3 +1,4 @@
+import sys
 from pyjavaproperties import Properties
 from source.utilities import constants
 
@@ -29,3 +30,13 @@ class ReadConfig:
     def get_explicit_wait():
         prop = ReadConfig.get_properties()
         return int(prop.getProperty("EWait"))
+
+    @staticmethod
+    def write_to_report():
+        prop = ReadConfig.get_properties()
+        out = open(constants.ALLURE_RESULTS + "environment.properties", mode='w')
+        prop.setProperty("Browser Name", ReadConfig.get_browser())
+        prop.setProperty("Application URL", ReadConfig.get_url())
+        prop.setProperty("Python version", str(sys.version))
+        prop.setProperty("Platform", str(sys.getwindowsversion()))
+        prop.store(out)
