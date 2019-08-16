@@ -6,21 +6,15 @@ from source.utilities.properties import ReadConfig
 
 class Actions:
 
-    @staticmethod
-    def get_action(driver):
-        return ActionChains(driver)
+    def __init__(self, driver):
+        self.driver = driver
+        self.action = ActionChains(driver)
 
-    @staticmethod
-    def move_to_element(driver, element):
-        action = Actions.get_action(driver)
-        action.move_to_element(element)
-        action.perform()
+    def move_to_element(self, element):
+        self.action.move_to_element(element).perform()
 
-    @staticmethod
-    def action_click(driver, element):
-        action = Actions.get_action(driver)
-        action.click(element)
-        action.perform()
+    def action_click(self, element):
+        self.action.perform()
 
 
 class Alert:

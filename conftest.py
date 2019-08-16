@@ -1,10 +1,13 @@
 import pytest
-from selenium.webdriver.support.event_firing_webdriver import EventFiringWebDriver
-
 from source.utilities import helper
-from source.utilities.listeners import WebDriverListeners
 from source.utilities.webdriver_extension import start_browser
 from source.utilities.properties import ReadConfig
+
+
+@pytest.fixture(scope='session', autouse=True)
+def set_property():
+    yield
+    ReadConfig.write_to_report()
 
 
 @pytest.hookimpl(hookwrapper=True, tryfirst=True)
@@ -15,10 +18,10 @@ def pytest_runtest_makereport(item, call):
 
     return rep
 
+
 @pytest.fixture(scope='function', autouse=True)
 def set_up(request):
-    web_driver = start_browser(ReadConfig.get_browser(), ReadConfig.get_url())
-    driver = EventFiringWebDriver(web_driver, WebDriverListeners())
+    driver = start_browser(ReadConfig.get_browser(), ReadConfig.get_url())
     if request is not None:
         request.node.driver = driver
     yield
