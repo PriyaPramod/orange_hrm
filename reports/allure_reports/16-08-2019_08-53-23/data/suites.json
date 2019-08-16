@@ -1,0 +1,67 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "name" : "suites",
+  "children" : [ {
+    "name" : "test_scripts.test_dashboard",
+    "children" : [ {
+      "name" : "test_dashboard",
+      "children" : [ {
+        "children" : [ {
+          "name" : "test_datda",
+          "uid" : "748c1229d3b960d0",
+          "parentUid" : "3f04ab3caeaf5145f3ac0e2958846660",
+          "status" : "passed",
+          "time" : {
+            "start" : 1565435770668,
+            "stop" : 1565435770668,
+            "duration" : 0
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        } ],
+        "uid" : "3f04ab3caeaf5145f3ac0e2958846660"
+      } ],
+      "uid" : "802b34f66d9cb739bbea9dad96181f5b"
+    } ],
+    "uid" : "583b9010aab86b8d6e5cf65304134e5c"
+  }, {
+    "name" : "test_scripts.test_login",
+    "children" : [ {
+      "name" : "test_login",
+      "children" : [ {
+        "name" : "TestLogin",
+        "children" : [ {
+          "name" : "test_TC_001_invalid_login",
+          "uid" : "c546f37e998dabfb",
+          "parentUid" : "547126434cd0e27f80f2e1c98f18bd02",
+          "status" : "passed",
+          "time" : {
+            "start" : 1565924776428,
+            "stop" : 1565924788177,
+            "duration" : 11749
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        }, {
+          "name" : "test_tc_001_invalid_login",
+          "uid" : "c48efe0b1bed1a0d",
+          "parentUid" : "547126434cd0e27f80f2e1c98f18bd02",
+          "status" : "passed",
+          "time" : {
+            "start" : 1565925788831,
+            "stop" : 1565925801117,
+            "duration" : 12286
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        } ],
+        "uid" : "547126434cd0e27f80f2e1c98f18bd02"
+      } ],
+      "uid" : "fa85f0d8481a33ea8d61ea33f56d2c2b"
+    } ],
+    "uid" : "1a86bff18fa5fa006c0060fd4d1b9ab1"
+  } ]
+}

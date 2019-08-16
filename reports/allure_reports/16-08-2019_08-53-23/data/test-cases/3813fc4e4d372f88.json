@@ -1,0 +1,92 @@
+{
+  "uid" : "3813fc4e4d372f88",
+  "name" : "test_TC_001_invalid_login",
+  "fullName" : "test_scripts.test_login.test_login.TestLogin#test_TC_001_invalid_login",
+  "historyId" : "2c779ce06baf450ab1b9670baaa9d944",
+  "time" : {
+    "start" : 1565924386308,
+    "stop" : 1565924386320,
+    "duration" : 12
+  },
+  "status" : "broken",
+  "statusMessage" : "AttributeError: 'DashboardPage' object has no attribute 'find_element'",
+  "statusTrace" : "self = <test_scripts.test_login.test_login.TestLogin object at 0x04654F10>\nrequest = <FixtureRequest for <Function test_TC_001_invalid_login>>\n\n    def test_TC_001_invalid_login(self, request):\n        dashboard = get_dashboard(request.node.driver)\n>       dashboard.hover_on_sign_in()\n\ntest_scripts\\test_login\\test_login.py:9: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <source.pages.dashboard_page.DashboardPage object at 0x046751F0>\n\n    def hover_on_sign_in(self):\n>       Actions(self.driver).move_to_element(self.find_element(*self.__accounts_list))\nE       AttributeError: 'DashboardPage' object has no attribute 'find_element'\n\nsource\\pages\\dashboard_page.py:13: AttributeError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "set_up",
+    "time" : {
+      "start" : 1565924374396,
+      "stop" : 1565924386272,
+      "duration" : 11876
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "hasContent" : false,
+    "stepsCount" : 0
+  } ],
+  "afterStages" : [ {
+    "name" : "set_up::0",
+    "time" : {
+      "start" : 1565924386456,
+      "stop" : 1565924391426,
+      "duration" : 4970
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "62b666012c139121",
+      "name" : "test_TC_001_invalid_login",
+      "source" : "62b666012c139121.png",
+      "type" : "image/png",
+      "size" : 538919
+    } ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 1,
+    "hasContent" : true,
+    "stepsCount" : 0
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "test_scripts.test_login"
+  }, {
+    "name" : "suite",
+    "value" : "test_login"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestLogin"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-JAMBUR3"
+  }, {
+    "name" : "thread",
+    "value" : "12128-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_scripts.test_login.test_login"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "3813fc4e4d372f88.json",
+  "parameterValues" : [ ]
+}

@@ -1,0 +1,92 @@
+{
+  "uid" : "890c1f5bc6fe41fb",
+  "name" : "test_TC_001_invalid_login",
+  "fullName" : "test_scripts.test_login.test_login.TestLogin#test_TC_001_invalid_login",
+  "historyId" : "2c779ce06baf450ab1b9670baaa9d944",
+  "time" : {
+    "start" : 1565924586551,
+    "stop" : 1565924593517,
+    "duration" : 6966
+  },
+  "status" : "broken",
+  "statusMessage" : "TypeError: 'in <string>' requires string as left operand, not NoneType",
+  "statusTrace" : "self = <test_scripts.test_login.test_login.TestLogin object at 0x04630330>\nrequest = <FixtureRequest for <Function test_TC_001_invalid_login>>\n\n    def test_TC_001_invalid_login(self, request):\n        dashboard = get_dashboard(request.node.driver)\n        dashboard.hover_on_sign_in()\n        dashboard.click_on_sign_in()\n        login = get_login(request.node.driver)\n        login.enter_email_mobile_number(\"gsakjdhgasdjf\")\n        login.click_on_continue()\n    \n>       assert login.get_error_message() in \"We cannot find an account with that email address\"\nE       TypeError: 'in <string>' requires string as left operand, not NoneType\n\ntest_scripts\\test_login\\test_login.py:15: TypeError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "set_up",
+    "time" : {
+      "start" : 1565924577459,
+      "stop" : 1565924586547,
+      "duration" : 9088
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  } ],
+  "afterStages" : [ {
+    "name" : "set_up::0",
+    "time" : {
+      "start" : 1565924593593,
+      "stop" : 1565924596773,
+      "duration" : 3180
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "bfdb4484383d6253",
+      "name" : "test_TC_001_invalid_login",
+      "source" : "bfdb4484383d6253.png",
+      "type" : "image/png",
+      "size" : 47850
+    } ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "stepsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 1
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "test_scripts.test_login"
+  }, {
+    "name" : "suite",
+    "value" : "test_login"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestLogin"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-JAMBUR3"
+  }, {
+    "name" : "thread",
+    "value" : "11940-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_scripts.test_login.test_login"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "890c1f5bc6fe41fb.json",
+  "parameterValues" : [ ]
+}

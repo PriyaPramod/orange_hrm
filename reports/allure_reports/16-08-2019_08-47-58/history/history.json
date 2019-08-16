@@ -1,0 +1,60 @@
+{
+  "0e3e338236daa0370ff8b1dce809f67a" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "64a434b677bd29b7",
+      "status" : "broken",
+      "statusDetails" : "TypeError: get_text() missing 1 required positional argument: 'value'",
+      "time" : {
+        "start" : 1565925468658,
+        "stop" : 1565925475572,
+        "duration" : 6914
+      }
+    } ]
+  },
+  "2c779ce06baf450ab1b9670baaa9d944" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "eb680d7152082049",
+      "status" : "passed",
+      "time" : {
+        "start" : 1565924776428,
+        "stop" : 1565924788177,
+        "duration" : 11749
+      }
+    } ]
+  },
+  "9f092108f31c133a44e70425274cd9ae" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "66d810f083747973",
+      "status" : "passed",
+      "time" : {
+        "start" : 1565435770668,
+        "stop" : 1565435770668,
+        "duration" : 0
+      }
+    } ]
+  }
+}
