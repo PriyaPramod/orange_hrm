@@ -2,6 +2,7 @@ from selenium.webdriver.common.by import By
 import allure
 from source.pages.base_page import BasePage
 from source.utilities.webelement_extentsion import Actions
+from source.utilities.webdriver_extension import switch_to_child_window
 
 
 class DashboardPage(BasePage):
@@ -29,6 +30,7 @@ class DashboardPage(BasePage):
 
     @allure.step
     def click_on_add_to_cart(self):
+        switch_to_child_window(self.driver)
         self.click(self.__add_to_cart_button())
 
     @allure.step

@@ -1,0 +1,26 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "name" : "categories",
+  "children" : [ {
+    "name" : "Test defects",
+    "children" : [ {
+      "name" : "TypeError: switch_to_child_window() missing 1 required positional argument: 'driver'",
+      "children" : [ {
+        "name" : "test_tc_002_add_product_and_verify",
+        "uid" : "4445cc9a93f10229",
+        "parentUid" : "f83888348aeaee36ad8b1ded66a5c79b",
+        "status" : "broken",
+        "time" : {
+          "start" : 1566668258492,
+          "stop" : 1566668273616,
+          "duration" : 15124
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "f83888348aeaee36ad8b1ded66a5c79b"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  } ]
+}

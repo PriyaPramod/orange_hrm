@@ -1,20 +1,14 @@
-from selenium import webdriver
-from source.utilities import constants
-from source.utilities.properties import ReadConfig
 
 
-def start_browser(browser_name, url):
-    driver = None
-    if browser_name == "chrome" or browser_name == "Chrome":
-        options = webdriver.ChromeOptions()
-        options.add_argument("--disable-infobars")
-        options.add_argument("--start-maximized")
-        driver = webdriver.Chrome(options=options, executable_path=constants.CHROME_PATH)
-
-    elif browser_name == "firefox":
-        driver = webdriver.Firefox(executable_path=constants.FIREFOX_PATH)
-
-    driver.get(url)
-    driver.implicitly_wait(ReadConfig.get_implicit_wait())
-    return driver
-
+def switch_to_child_window(driver):
+    child_window = None
+    parent_window = driver.current_window_handle
+    window_ids = driver.window_handles
+    try:
+        for window_id in window_ids:
+            if window_id != parent_window:
+                child_window = window_id
+                break
+        driver.switch_to.window(child_window)
+    except Exception:
+        print("Unable to change the focus to the child window")

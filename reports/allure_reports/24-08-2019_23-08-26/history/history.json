@@ -1,0 +1,41 @@
+{
+  "0e3e338236daa0370ff8b1dce809f67a" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "fa996879e693b04a",
+      "status" : "passed",
+      "time" : {
+        "start" : 1566668296171,
+        "stop" : 1566668304102,
+        "duration" : 7931
+      }
+    } ]
+  },
+  "3606d963eae4bdfb89717742b5b8800b" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "4445cc9a93f10229",
+      "status" : "broken",
+      "statusDetails" : "TypeError: switch_to_child_window() missing 1 required positional argument: 'driver'",
+      "time" : {
+        "start" : 1566668258492,
+        "stop" : 1566668273616,
+        "duration" : 15124
+      }
+    } ]
+  }
+}

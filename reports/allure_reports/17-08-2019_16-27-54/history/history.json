@@ -1,0 +1,41 @@
+{
+  "0e3e338236daa0370ff8b1dce809f67a" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "d60f45046c721837",
+      "status" : "passed",
+      "time" : {
+        "start" : 1566039406099,
+        "stop" : 1566039438186,
+        "duration" : 32087
+      }
+    } ]
+  },
+  "3606d963eae4bdfb89717742b5b8800b" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "94ab2da23cc2a03",
+      "status" : "broken",
+      "statusDetails" : "TypeError: can only concatenate str (not \"type\") to str",
+      "time" : {
+        "start" : 1566039405616,
+        "stop" : 1566039469423,
+        "duration" : 63807
+      }
+    } ]
+  }
+}

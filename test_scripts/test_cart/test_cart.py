@@ -15,6 +15,7 @@ class TestCart:
         dashboard.enter_product_name_to_search_box(product_name)
         product_added = dashboard.get_product_name()
         dashboard.select_product_to_add_to_cart()
+
         dashboard.click_on_add_to_cart()
         message = dashboard.get_message_after_adding_to_cart()
 
@@ -27,4 +28,4 @@ class TestCart:
 
         cart.delete_the_added_product_from_cart()
 
-        assert cart.get_confirm_message_after_deleting_product in success_message_after_deleting
+        assert cart.get_confirm_message_after_deleting_product() in success_message_after_deleting

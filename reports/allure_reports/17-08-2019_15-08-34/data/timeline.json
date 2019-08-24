@@ -1,0 +1,39 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "DESKTOP-JAMBUR3",
+    "children" : [ {
+      "name" : "2956-MainThread",
+      "children" : [ {
+        "name" : "test_tc_001_invalid_login",
+        "uid" : "2225d969f66d6cf0",
+        "parentUid" : "16b50b547e7682c98c0c84279ca749d6",
+        "status" : "broken",
+        "time" : {
+          "start" : 1566034709506,
+          "stop" : 1566034710086,
+          "duration" : 580
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_tc_002_add_product_and_verify",
+        "uid" : "37c44f7b40af55e1",
+        "parentUid" : "16b50b547e7682c98c0c84279ca749d6",
+        "status" : "broken",
+        "time" : {
+          "start" : 1566034673631,
+          "stop" : 1566034675788,
+          "duration" : 2157
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "16b50b547e7682c98c0c84279ca749d6"
+    } ],
+    "uid" : "20f58f246004df388a98625f9e186941"
+  } ]
+}

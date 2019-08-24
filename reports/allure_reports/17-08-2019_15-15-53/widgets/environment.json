@@ -1,0 +1,22 @@
+[ {
+  "values" : [ "https://www.amazon.in/" ],
+  "name" : "ApplicationURL"
+}, {
+  "values" : [ "30" ],
+  "name" : "IWait"
+}, {
+  "values" : [ "sys.getwindowsversion(major=10, minor=0, build=18362, platform=2, service_pack='')" ],
+  "name" : "Platform"
+}, {
+  "values" : [ "URL=https://www.amazon.in/" ],
+  "name" : "Application"
+}, {
+  "values" : [ "15" ],
+  "name" : "EWait"
+}, {
+  "values" : [ "version=3.7.4 (tags/v3.7.4:e09359112e, Jul  8 2019, 19:29:22) [MSC v.1916 32 bit (Intel)]" ],
+  "name" : "Python"
+}, {
+  "values" : [ "Name=Chrome" ],
+  "name" : "Browser"
+} ]

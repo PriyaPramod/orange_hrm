@@ -1,0 +1,353 @@
+{
+  "uid" : "60db8dc2dfd79f90",
+  "name" : "test_tc_002_add_product_and_verify",
+  "fullName" : "test_scripts.test_cart.test_cart.TestCart#test_tc_002_add_product_and_verify",
+  "historyId" : "3606d963eae4bdfb89717742b5b8800b",
+  "time" : {
+    "start" : 1566668953552,
+    "stop" : 1566668981223,
+    "duration" : 27671
+  },
+  "status" : "broken",
+  "statusMessage" : "TypeError: 'in <string>' requires string as left operand, not method",
+  "statusTrace" : "self = <test_scripts.test_cart.test_cart.TestCart object at 0x0927E710>\nrequest = <FixtureRequest for <Function test_tc_002_add_product_and_verify>>\n\n    def test_tc_002_add_product_and_verify(self, request):\n        product_name = excel.get_cell_value(constants.EXCEL_PATH, \"Cart\", 1, \"ProductName\")\n        success_message = excel.get_cell_value(constants.EXCEL_PATH, \"Cart\", 1, \"SuccessMessage\")\n        success_message_after_deleting = excel.get_cell_value(constants.EXCEL_PATH, \"Cart\", 1, \"SuccessMessageAfterDelete\")\n    \n        dashboard = pm.get_dashboard(request.node.driver)\n        cart = pm.get_cart(request.node.driver)\n    \n        dashboard.enter_product_name_to_search_box(product_name)\n        product_added = dashboard.get_product_name()\n        dashboard.select_product_to_add_to_cart()\n    \n        dashboard.click_on_add_to_cart()\n        message = dashboard.get_message_after_adding_to_cart()\n    \n        assert success_message in message, \"Unable to add the product to cart\"\n    \n        dashboard.click_on_cart_box()\n        product_name_in_cart = cart.get_product_name_from_cart_page()\n    \n        assert product_name_in_cart == product_added, \"Added product is not available in the cart page\"\n    \n        cart.delete_the_added_product_from_cart()\n    \n>       assert cart.get_confirm_message_after_deleting_product in success_message_after_deleting\nE       TypeError: 'in <string>' requires string as left operand, not method\n\ntest_scripts\\test_cart\\test_cart.py:31: TypeError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "set_property",
+    "time" : {
+      "start" : 1566668936867,
+      "stop" : 1566668936867,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false,
+    "stepsCount" : 0
+  }, {
+    "name" : "set_up",
+    "time" : {
+      "start" : 1566668936883,
+      "stop" : 1566668953337,
+      "duration" : 16454
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false,
+    "stepsCount" : 0
+  } ],
+  "testStage" : {
+    "status" : "broken",
+    "statusMessage" : "TypeError: 'in <string>' requires string as left operand, not method",
+    "statusTrace" : "self = <test_scripts.test_cart.test_cart.TestCart object at 0x0927E710>\nrequest = <FixtureRequest for <Function test_tc_002_add_product_and_verify>>\n\n    def test_tc_002_add_product_and_verify(self, request):\n        product_name = excel.get_cell_value(constants.EXCEL_PATH, \"Cart\", 1, \"ProductName\")\n        success_message = excel.get_cell_value(constants.EXCEL_PATH, \"Cart\", 1, \"SuccessMessage\")\n        success_message_after_deleting = excel.get_cell_value(constants.EXCEL_PATH, \"Cart\", 1, \"SuccessMessageAfterDelete\")\n    \n        dashboard = pm.get_dashboard(request.node.driver)\n        cart = pm.get_cart(request.node.driver)\n    \n        dashboard.enter_product_name_to_search_box(product_name)\n        product_added = dashboard.get_product_name()\n        dashboard.select_product_to_add_to_cart()\n    \n        dashboard.click_on_add_to_cart()\n        message = dashboard.get_message_after_adding_to_cart()\n    \n        assert success_message in message, \"Unable to add the product to cart\"\n    \n        dashboard.click_on_cart_box()\n        product_name_in_cart = cart.get_product_name_from_cart_page()\n    \n        assert product_name_in_cart == product_added, \"Added product is not available in the cart page\"\n    \n        cart.delete_the_added_product_from_cart()\n    \n>       assert cart.get_confirm_message_after_deleting_product in success_message_after_deleting\nE       TypeError: 'in <string>' requires string as left operand, not method\n\ntest_scripts\\test_cart\\test_cart.py:31: TypeError",
+    "steps" : [ {
+      "name" : "enter_product_name_to_search_box",
+      "time" : {
+        "start" : 1566668957277,
+        "stop" : 1566668966112,
+        "duration" : 8835
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "product_name",
+        "value" : "'One Plus 7 Pro'"
+      } ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true,
+      "stepsCount" : 0
+    }, {
+      "name" : "get_product_name",
+      "time" : {
+        "start" : 1566668966112,
+        "stop" : 1566668966276,
+        "duration" : 164
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false,
+      "stepsCount" : 0
+    }, {
+      "name" : "select_product_to_add_to_cart",
+      "time" : {
+        "start" : 1566668966277,
+        "stop" : 1566668967325,
+        "duration" : 1048
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false,
+      "stepsCount" : 0
+    }, {
+      "name" : "click_on_add_to_cart",
+      "time" : {
+        "start" : 1566668967325,
+        "stop" : 1566668977312,
+        "duration" : 9987
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false,
+      "stepsCount" : 0
+    }, {
+      "name" : "get_message_after_adding_to_cart",
+      "time" : {
+        "start" : 1566668977312,
+        "stop" : 1566668977501,
+        "duration" : 189
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false,
+      "stepsCount" : 0
+    }, {
+      "name" : "click_on_cart_box",
+      "time" : {
+        "start" : 1566668977501,
+        "stop" : 1566668980318,
+        "duration" : 2817
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false,
+      "stepsCount" : 0
+    }, {
+      "name" : "get_product_name_from_cart_page",
+      "time" : {
+        "start" : 1566668980318,
+        "stop" : 1566668980415,
+        "duration" : 97
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false,
+      "stepsCount" : 0
+    }, {
+      "name" : "delete_the_added_product_from_cart",
+      "time" : {
+        "start" : 1566668980416,
+        "stop" : 1566668981198,
+        "duration" : 782
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false,
+      "stepsCount" : 0
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true,
+    "stepsCount" : 8
+  },
+  "afterStages" : [ {
+    "name" : "set_property::0",
+    "time" : {
+      "start" : 1566669014121,
+      "stop" : 1566669014168,
+      "duration" : 47
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false,
+    "stepsCount" : 0
+  }, {
+    "name" : "set_up::0",
+    "time" : {
+      "start" : 1566668981388,
+      "stop" : 1566668984683,
+      "duration" : 3295
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "c8edaf2e647842a4",
+      "name" : "test_tc_002_add_product_and_verify",
+      "source" : "c8edaf2e647842a4.png",
+      "type" : "image/png",
+      "size" : 185705
+    } ],
+    "parameters" : [ ],
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true,
+    "stepsCount" : 0
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "test_scripts.test_cart"
+  }, {
+    "name" : "suite",
+    "value" : "test_cart"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestCart"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-JAMBUR3"
+  }, {
+    "name" : "thread",
+    "value" : "6056-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_scripts.test_cart.test_cart"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "54ecf94ff68c3df6",
+      "status" : "broken",
+      "statusDetails" : "TypeError: 'in <string>' requires string as left operand, not method",
+      "time" : {
+        "start" : 1566668432601,
+        "stop" : 1566668453860,
+        "duration" : 21259
+      }
+    }, {
+      "uid" : "f02ba8ebfb44f514",
+      "status" : "broken",
+      "statusDetails" : "TypeError: switch_to_child_window() missing 1 required positional argument: 'driver'",
+      "time" : {
+        "start" : 1566668258492,
+        "stop" : 1566668273616,
+        "duration" : 15124
+      }
+    }, {
+      "uid" : "d340aa0ac4aeea3",
+      "status" : "failed",
+      "statusDetails" : "AssertionError",
+      "time" : {
+        "start" : 1566666982110,
+        "stop" : 1566667026368,
+        "duration" : 44258
+      }
+    }, {
+      "uid" : "944134db9594453a",
+      "status" : "broken",
+      "statusDetails" : "TypeError: can only concatenate str (not \"type\") to str",
+      "time" : {
+        "start" : 1566666573521,
+        "stop" : 1566666625182,
+        "duration" : 51661
+      }
+    }, {
+      "uid" : "837fd3aef08d9edd",
+      "status" : "broken",
+      "statusDetails" : "TypeError: can only concatenate str (not \"type\") to str",
+      "time" : {
+        "start" : 1566042591793,
+        "stop" : 1566042631288,
+        "duration" : 39495
+      }
+    }, {
+      "uid" : "691a8078765a925c",
+      "status" : "broken",
+      "statusDetails" : "selenium.common.exceptions.SessionNotCreatedException: Message: Unable to create new service: ChromeDriverService\nBuild info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'\nSystem info: host: 'DESKTOP-JAMBUR3', ip: '192.168.1.156', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'\nDriver info: driver.version: unknown\nStacktrace:\n    at org.openqa.selenium.grid.session.remote.ServicedSession$Factory.lambda$get$0 (ServicedSession.java:135)\n    at org.openqa.selenium.grid.session.remote.ServicedSession$Factory.apply (ServicedSession.java:152)\n    at org.openqa.selenium.remote.server.ActiveSessionFactory.lambda$apply$12 (ActiveSessionFactory.java:180)\n    at java.util.stream.ReferencePipeline$3$1.accept (None:-1)\n    at java.util.stream.ReferencePipeline$11$1.accept (None:-1)\n    at java.util.stream.ReferencePipeline$2$1.accept (None:-1)\n    at java.util.Spliterators$ArraySpliterator.tryAdvance (None:-1)\n    at java.util.stream.ReferencePipeline.forEachWithCancel (None:-1)\n    at java.util.stream.AbstractPipeline.copyIntoWithCancel (None:-1)\n    at java.util.stream.AbstractPipeline.copyInto (None:-1)\n    at java.util.stream.AbstractPipeline.wrapAndCopyInto (None:-1)\n    at java.util.stream.FindOps$FindOp.evaluateSequential (None:-1)\n    at java.util.stream.AbstractPipeline.evaluate (None:-1)\n    at java.util.stream.ReferencePipeline.findFirst (None:-1)\n    at org.openqa.selenium.remote.server.ActiveSessionFactory.apply (ActiveSessionFactory.java:183)\n    at org.openqa.selenium.remote.server.NewSessionPipeline.lambda$null$2 (NewSessionPipeline.java:66)\n    at java.util.stream.ReferencePipeline$3$1.accept (None:-1)\n    at java.util.stream.ReferencePipeline$2$1.accept (None:-1)\n    at java.util.Collections$2.tryAdvance (None:-1)\n    at java.util.stream.ReferencePipeline.forEachWithCancel (None:-1)\n    at java.util.stream.AbstractPipeline.copyIntoWithCancel (None:-1)\n    at java.util.stream.AbstractPipeline.copyInto (None:-1)\n    at java.util.stream.AbstractPipeline.wrapAndCopyInto (None:-1)\n    at java.util.stream.FindOps$FindOp.evaluateSequential (None:-1)\n    at java.util.stream.AbstractPipeline.evaluate (None:-1)\n    at java.util.stream.ReferencePipeline.findFirst (None:-1)\n    at org.openqa.selenium.remote.server.NewSessionPipeline.lambda$createNewSession$3 (NewSessionPipeline.java:69)\n    at java.util.stream.ReferencePipeline$3$1.accept (None:-1)\n    at java.util.stream.ReferencePipeline$3$1.accept (None:-1)\n    at java.util.stream.ReferencePipeline$3$1.accept (None:-1)\n    at java.util.stream.DistinctOps$1$2.accept (None:-1)\n    at java.util.stream.ReferencePipeline$2$1.accept (None:-1)\n    at java.util.stream.ReferencePipeline$3$1.accept (None:-1)\n    at java.util.stream.ReferencePipeline$2$1.accept (None:-1)\n    at java.util.stream.Streams$StreamBuilderImpl.tryAdvance (None:-1)\n    at java.util.stream.Streams$ConcatSpliterator.tryAdvance (None:-1)\n    at java.util.stream.ReferencePipeline.forEachWithCancel (None:-1)\n    at java.util.stream.AbstractPipeline.copyIntoWithCancel (None:-1)\n    at java.util.stream.AbstractPipeline.copyInto (None:-1)\n    at java.util.stream.AbstractPipeline.wrapAndCopyInto (None:-1)\n    at java.util.stream.FindOps$FindOp.evaluateSequential (None:-1)\n    at java.util.stream.AbstractPipeline.evaluate (None:-1)\n    at java.util.stream.ReferencePipeline.findFirst (None:-1)\n    at org.openqa.selenium.remote.server.NewSessionPipeline.createNewSession (NewSessionPipeline.java:72)\n    at org.openqa.selenium.remote.server.commandhandler.BeginSession.execute (BeginSession.java:65)\n    at org.openqa.selenium.remote.server.WebDriverServlet.lambda$handle$0 (WebDriverServlet.java:235)\n    at java.util.concurrent.Executors$RunnableAdapter.call (None:-1)\n    at java.util.concurrent.FutureTask.run (None:-1)\n    at java.util.concurrent.ThreadPoolExecutor.runWorker (None:-1)\n    at java.util.concurrent.ThreadPoolExecutor$Worker.run (None:-1)\n    at java.lang.Thread.run (None:-1)",
+      "time" : {
+        "start" : 1566042335630,
+        "stop" : 1566042335630,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "6c9910ad947c9cdf",
+      "status" : "broken",
+      "statusDetails" : "TypeError: can only concatenate str (not \"type\") to str",
+      "time" : {
+        "start" : 1566039405616,
+        "stop" : 1566039469423,
+        "duration" : 63807
+      }
+    }, {
+      "uid" : "bf344e0506410158",
+      "status" : "broken",
+      "statusDetails" : "TypeError: can only concatenate str (not \"type\") to str",
+      "time" : {
+        "start" : 1566035091940,
+        "stop" : 1566035131137,
+        "duration" : 39197
+      }
+    }, {
+      "uid" : "766d13518a7454d4",
+      "status" : "broken",
+      "statusDetails" : "xlrd.biffh.XLRDError: No sheet named <'cart'>",
+      "time" : {
+        "start" : 1566034993713,
+        "stop" : 1566034997416,
+        "duration" : 3703
+      }
+    }, {
+      "uid" : "f98c2c5dc9ea7ef0",
+      "status" : "broken",
+      "statusDetails" : "xlrd.biffh.XLRDError: No sheet named <'cart'>",
+      "time" : {
+        "start" : 1566034673631,
+        "stop" : 1566034675788,
+        "duration" : 2157
+      }
+    } ],
+    "categories" : [ {
+      "name" : "Test defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "60db8dc2dfd79f90.json",
+  "parameterValues" : [ ]
+}
