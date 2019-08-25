@@ -1,0 +1,3 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Sat Aug 24 22:47:29 IST 2019","Sat Aug 24 22:47:34 IST 2019","4424","test_scripts.test_login","test_login","TestLogin","","","test_tc_001_invalid_login",""
+"failed","Sat Aug 24 22:46:22 IST 2019","Sat Aug 24 22:47:06 IST 2019","44258","test_scripts.test_cart","test_cart","TestCart","","","test_tc_002_add_product_and_verify",""

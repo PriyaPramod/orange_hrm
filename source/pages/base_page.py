@@ -17,7 +17,7 @@ class BasePage:
             web_element = self.driver.find_element(by, value)
             return web_element
         except NoSuchElementException:
-            print("Web element not found: "+" Locator type: "+by+" Locator value: "+NoSuchElementException)
+            print("Exception: element not found: \n "+" Locator type: ", by, " Locator value: "+value)
             assert False
 
     @staticmethod

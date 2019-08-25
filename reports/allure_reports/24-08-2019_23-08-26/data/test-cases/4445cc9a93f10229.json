@@ -1,0 +1,277 @@
+{
+  "uid" : "4445cc9a93f10229",
+  "name" : "test_tc_002_add_product_and_verify",
+  "fullName" : "test_scripts.test_cart.test_cart.TestCart#test_tc_002_add_product_and_verify",
+  "historyId" : "3606d963eae4bdfb89717742b5b8800b",
+  "time" : {
+    "start" : 1566668258492,
+    "stop" : 1566668273616,
+    "duration" : 15124
+  },
+  "status" : "broken",
+  "statusMessage" : "TypeError: switch_to_child_window() missing 1 required positional argument: 'driver'",
+  "statusTrace" : "self = <test_scripts.test_cart.test_cart.TestCart object at 0x090E1750>\nrequest = <FixtureRequest for <Function test_tc_002_add_product_and_verify>>\n\n    def test_tc_002_add_product_and_verify(self, request):\n        product_name = excel.get_cell_value(constants.EXCEL_PATH, \"Cart\", 1, \"ProductName\")\n        success_message = excel.get_cell_value(constants.EXCEL_PATH, \"Cart\", 1, \"SuccessMessage\")\n        success_message_after_deleting = excel.get_cell_value(constants.EXCEL_PATH, \"Cart\", 1, \"SuccessMessageAfterDelete\")\n    \n        dashboard = pm.get_dashboard(request.node.driver)\n        cart = pm.get_cart(request.node.driver)\n    \n        dashboard.enter_product_name_to_search_box(product_name)\n        product_added = dashboard.get_product_name()\n        dashboard.select_product_to_add_to_cart()\n    \n>       dashboard.click_on_add_to_cart()\n\ntest_scripts\\test_cart\\test_cart.py:19: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <source.pages.dashboard_page.DashboardPage object at 0x095E8CD0>\n\n    @allure.step\n    def click_on_add_to_cart(self):\n>       switch_to_child_window()\nE       TypeError: switch_to_child_window() missing 1 required positional argument: 'driver'\n\nsource\\pages\\dashboard_page.py:33: TypeError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "set_property",
+    "time" : {
+      "start" : 1566668238012,
+      "stop" : 1566668238012,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  }, {
+    "name" : "set_up",
+    "time" : {
+      "start" : 1566668238012,
+      "stop" : 1566668258414,
+      "duration" : 20402
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "status" : "broken",
+    "statusMessage" : "TypeError: switch_to_child_window() missing 1 required positional argument: 'driver'",
+    "statusTrace" : "self = <test_scripts.test_cart.test_cart.TestCart object at 0x090E1750>\nrequest = <FixtureRequest for <Function test_tc_002_add_product_and_verify>>\n\n    def test_tc_002_add_product_and_verify(self, request):\n        product_name = excel.get_cell_value(constants.EXCEL_PATH, \"Cart\", 1, \"ProductName\")\n        success_message = excel.get_cell_value(constants.EXCEL_PATH, \"Cart\", 1, \"SuccessMessage\")\n        success_message_after_deleting = excel.get_cell_value(constants.EXCEL_PATH, \"Cart\", 1, \"SuccessMessageAfterDelete\")\n    \n        dashboard = pm.get_dashboard(request.node.driver)\n        cart = pm.get_cart(request.node.driver)\n    \n        dashboard.enter_product_name_to_search_box(product_name)\n        product_added = dashboard.get_product_name()\n        dashboard.select_product_to_add_to_cart()\n    \n>       dashboard.click_on_add_to_cart()\n\ntest_scripts\\test_cart\\test_cart.py:19: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <source.pages.dashboard_page.DashboardPage object at 0x095E8CD0>\n\n    @allure.step\n    def click_on_add_to_cart(self):\n>       switch_to_child_window()\nE       TypeError: switch_to_child_window() missing 1 required positional argument: 'driver'\n\nsource\\pages\\dashboard_page.py:33: TypeError",
+    "steps" : [ {
+      "name" : "enter_product_name_to_search_box",
+      "time" : {
+        "start" : 1566668262121,
+        "stop" : 1566668271439,
+        "duration" : 9318
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "product_name",
+        "value" : "'One Plus 7 Pro'"
+      } ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : true
+    }, {
+      "name" : "get_product_name",
+      "time" : {
+        "start" : 1566668271439,
+        "stop" : 1566668273153,
+        "duration" : 1714
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "select_product_to_add_to_cart",
+      "time" : {
+        "start" : 1566668273153,
+        "stop" : 1566668273557,
+        "duration" : 404
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "click_on_add_to_cart",
+      "time" : {
+        "start" : 1566668273557,
+        "stop" : 1566668273557,
+        "duration" : 0
+      },
+      "status" : "broken",
+      "statusMessage" : "TypeError: switch_to_child_window() missing 1 required positional argument: 'driver'\n",
+      "statusTrace" : "  File \"C:\\Users\\Jayapriyapramod\\AppData\\Local\\Programs\\Python\\Python37-32\\lib\\site-packages\\allure_commons\\_allure.py\", line 157, in impl\n    return func(*a, **kw)\n  File \"C:\\Automation_Development_A\\orange_hrm\\source\\pages\\dashboard_page.py\", line 33, in click_on_add_to_cart\n    switch_to_child_window()\n",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : true,
+      "stepsCount" : 0,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : true,
+    "stepsCount" : 4,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "set_property::0",
+    "time" : {
+      "start" : 1566668306634,
+      "stop" : 1566668306649,
+      "duration" : 15
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  }, {
+    "name" : "set_up::0",
+    "time" : {
+      "start" : 1566668273948,
+      "stop" : 1566668277213,
+      "duration" : 3265
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "8c7b839fb9fbae6c",
+      "name" : "test_tc_002_add_product_and_verify",
+      "source" : "8c7b839fb9fbae6c.png",
+      "type" : "image/png",
+      "size" : 273110
+    } ],
+    "parameters" : [ ],
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : true
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "test_scripts.test_cart"
+  }, {
+    "name" : "suite",
+    "value" : "test_cart"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestCart"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-JAMBUR3"
+  }, {
+    "name" : "thread",
+    "value" : "11400-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_scripts.test_cart.test_cart"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "5beaee9ad08c8423",
+      "status" : "failed",
+      "statusDetails" : "AssertionError",
+      "time" : {
+        "start" : 1566666982110,
+        "stop" : 1566667026368,
+        "duration" : 44258
+      }
+    }, {
+      "uid" : "80f8477594e96493",
+      "status" : "broken",
+      "statusDetails" : "TypeError: can only concatenate str (not \"type\") to str",
+      "time" : {
+        "start" : 1566666573521,
+        "stop" : 1566666625182,
+        "duration" : 51661
+      }
+    }, {
+      "uid" : "2aada5897cc735e3",
+      "status" : "broken",
+      "statusDetails" : "TypeError: can only concatenate str (not \"type\") to str",
+      "time" : {
+        "start" : 1566042591793,
+        "stop" : 1566042631288,
+        "duration" : 39495
+      }
+    }, {
+      "uid" : "f8ad7c6c9bfa3082",
+      "status" : "broken",
+      "statusDetails" : "selenium.common.exceptions.SessionNotCreatedException: Message: Unable to create new service: ChromeDriverService\nBuild info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'\nSystem info: host: 'DESKTOP-JAMBUR3', ip: '192.168.1.156', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'\nDriver info: driver.version: unknown\nStacktrace:\n    at org.openqa.selenium.grid.session.remote.ServicedSession$Factory.lambda$get$0 (ServicedSession.java:135)\n    at org.openqa.selenium.grid.session.remote.ServicedSession$Factory.apply (ServicedSession.java:152)\n    at org.openqa.selenium.remote.server.ActiveSessionFactory.lambda$apply$12 (ActiveSessionFactory.java:180)\n    at java.util.stream.ReferencePipeline$3$1.accept (None:-1)\n    at java.util.stream.ReferencePipeline$11$1.accept (None:-1)\n    at java.util.stream.ReferencePipeline$2$1.accept (None:-1)\n    at java.util.Spliterators$ArraySpliterator.tryAdvance (None:-1)\n    at java.util.stream.ReferencePipeline.forEachWithCancel (None:-1)\n    at java.util.stream.AbstractPipeline.copyIntoWithCancel (None:-1)\n    at java.util.stream.AbstractPipeline.copyInto (None:-1)\n    at java.util.stream.AbstractPipeline.wrapAndCopyInto (None:-1)\n    at java.util.stream.FindOps$FindOp.evaluateSequential (None:-1)\n    at java.util.stream.AbstractPipeline.evaluate (None:-1)\n    at java.util.stream.ReferencePipeline.findFirst (None:-1)\n    at org.openqa.selenium.remote.server.ActiveSessionFactory.apply (ActiveSessionFactory.java:183)\n    at org.openqa.selenium.remote.server.NewSessionPipeline.lambda$null$2 (NewSessionPipeline.java:66)\n    at java.util.stream.ReferencePipeline$3$1.accept (None:-1)\n    at java.util.stream.ReferencePipeline$2$1.accept (None:-1)\n    at java.util.Collections$2.tryAdvance (None:-1)\n    at java.util.stream.ReferencePipeline.forEachWithCancel (None:-1)\n    at java.util.stream.AbstractPipeline.copyIntoWithCancel (None:-1)\n    at java.util.stream.AbstractPipeline.copyInto (None:-1)\n    at java.util.stream.AbstractPipeline.wrapAndCopyInto (None:-1)\n    at java.util.stream.FindOps$FindOp.evaluateSequential (None:-1)\n    at java.util.stream.AbstractPipeline.evaluate (None:-1)\n    at java.util.stream.ReferencePipeline.findFirst (None:-1)\n    at org.openqa.selenium.remote.server.NewSessionPipeline.lambda$createNewSession$3 (NewSessionPipeline.java:69)\n    at java.util.stream.ReferencePipeline$3$1.accept (None:-1)\n    at java.util.stream.ReferencePipeline$3$1.accept (None:-1)\n    at java.util.stream.ReferencePipeline$3$1.accept (None:-1)\n    at java.util.stream.DistinctOps$1$2.accept (None:-1)\n    at java.util.stream.ReferencePipeline$2$1.accept (None:-1)\n    at java.util.stream.ReferencePipeline$3$1.accept (None:-1)\n    at java.util.stream.ReferencePipeline$2$1.accept (None:-1)\n    at java.util.stream.Streams$StreamBuilderImpl.tryAdvance (None:-1)\n    at java.util.stream.Streams$ConcatSpliterator.tryAdvance (None:-1)\n    at java.util.stream.ReferencePipeline.forEachWithCancel (None:-1)\n    at java.util.stream.AbstractPipeline.copyIntoWithCancel (None:-1)\n    at java.util.stream.AbstractPipeline.copyInto (None:-1)\n    at java.util.stream.AbstractPipeline.wrapAndCopyInto (None:-1)\n    at java.util.stream.FindOps$FindOp.evaluateSequential (None:-1)\n    at java.util.stream.AbstractPipeline.evaluate (None:-1)\n    at java.util.stream.ReferencePipeline.findFirst (None:-1)\n    at org.openqa.selenium.remote.server.NewSessionPipeline.createNewSession (NewSessionPipeline.java:72)\n    at org.openqa.selenium.remote.server.commandhandler.BeginSession.execute (BeginSession.java:65)\n    at org.openqa.selenium.remote.server.WebDriverServlet.lambda$handle$0 (WebDriverServlet.java:235)\n    at java.util.concurrent.Executors$RunnableAdapter.call (None:-1)\n    at java.util.concurrent.FutureTask.run (None:-1)\n    at java.util.concurrent.ThreadPoolExecutor.runWorker (None:-1)\n    at java.util.concurrent.ThreadPoolExecutor$Worker.run (None:-1)\n    at java.lang.Thread.run (None:-1)",
+      "time" : {
+        "start" : 1566042335630,
+        "stop" : 1566042335630,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "4a7c6209b769e38e",
+      "status" : "broken",
+      "statusDetails" : "TypeError: can only concatenate str (not \"type\") to str",
+      "time" : {
+        "start" : 1566039405616,
+        "stop" : 1566039469423,
+        "duration" : 63807
+      }
+    }, {
+      "uid" : "3426f24a9504068d",
+      "status" : "broken",
+      "statusDetails" : "TypeError: can only concatenate str (not \"type\") to str",
+      "time" : {
+        "start" : 1566035091940,
+        "stop" : 1566035131137,
+        "duration" : 39197
+      }
+    }, {
+      "uid" : "95446a87cf58c75f",
+      "status" : "broken",
+      "statusDetails" : "xlrd.biffh.XLRDError: No sheet named <'cart'>",
+      "time" : {
+        "start" : 1566034993713,
+        "stop" : 1566034997416,
+        "duration" : 3703
+      }
+    }, {
+      "uid" : "b3c79f5877db925e",
+      "status" : "broken",
+      "statusDetails" : "xlrd.biffh.XLRDError: No sheet named <'cart'>",
+      "time" : {
+        "start" : 1566034673631,
+        "stop" : 1566034675788,
+        "duration" : 2157
+      }
+    } ],
+    "categories" : [ {
+      "name" : "Test defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "4445cc9a93f10229.json",
+  "parameterValues" : [ ]
+}

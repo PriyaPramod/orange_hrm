@@ -1,0 +1,69 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "DESKTOP-JAMBUR3",
+    "children" : [ {
+      "name" : "2956-MainThread",
+      "children" : [ {
+        "name" : "test_tc_002_add_product_and_verify",
+        "uid" : "df4a39a98207f662",
+        "parentUid" : "16b50b547e7682c98c0c84279ca749d6",
+        "status" : "broken",
+        "time" : {
+          "start" : 1566034673631,
+          "stop" : 1566034675788,
+          "duration" : 2157
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_tc_001_invalid_login",
+        "uid" : "e96b505e42531cdb",
+        "parentUid" : "16b50b547e7682c98c0c84279ca749d6",
+        "status" : "broken",
+        "time" : {
+          "start" : 1566034709506,
+          "stop" : 1566034710086,
+          "duration" : 580
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "16b50b547e7682c98c0c84279ca749d6"
+    }, {
+      "name" : "10020-MainThread",
+      "children" : [ {
+        "name" : "test_tc_002_add_product_and_verify",
+        "uid" : "109273fb2a6f15b7",
+        "parentUid" : "90f5adc0e3c83f1ef661f5746aa58153",
+        "status" : "broken",
+        "time" : {
+          "start" : 1566034993713,
+          "stop" : 1566034997416,
+          "duration" : 3703
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_tc_001_invalid_login",
+        "uid" : "87a4749efd389909",
+        "parentUid" : "90f5adc0e3c83f1ef661f5746aa58153",
+        "status" : "passed",
+        "time" : {
+          "start" : 1566035013031,
+          "stop" : 1566035019100,
+          "duration" : 6069
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "90f5adc0e3c83f1ef661f5746aa58153"
+    } ],
+    "uid" : "20f58f246004df388a98625f9e186941"
+  } ]
+}

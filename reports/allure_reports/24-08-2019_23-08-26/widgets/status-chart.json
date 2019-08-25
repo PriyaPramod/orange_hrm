@@ -1,0 +1,21 @@
+[ {
+  "uid" : "4445cc9a93f10229",
+  "name" : "test_tc_002_add_product_and_verify",
+  "time" : {
+    "start" : 1566668258492,
+    "stop" : 1566668273616,
+    "duration" : 15124
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "fa996879e693b04a",
+  "name" : "test_tc_001_invalid_login",
+  "time" : {
+    "start" : 1566668296171,
+    "stop" : 1566668304102,
+    "duration" : 7931
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

@@ -1,0 +1,41 @@
+{
+  "0e3e338236daa0370ff8b1dce809f67a" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "2d9143e9eed845b5",
+      "status" : "passed",
+      "time" : {
+        "start" : 1566669004680,
+        "stop" : 1566669011686,
+        "duration" : 7006
+      }
+    } ]
+  },
+  "3606d963eae4bdfb89717742b5b8800b" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "60db8dc2dfd79f90",
+      "status" : "broken",
+      "statusDetails" : "TypeError: 'in <string>' requires string as left operand, not method",
+      "time" : {
+        "start" : 1566668953552,
+        "stop" : 1566668981223,
+        "duration" : 27671
+      }
+    } ]
+  }
+}

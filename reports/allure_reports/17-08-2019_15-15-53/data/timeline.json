@@ -1,0 +1,99 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "DESKTOP-JAMBUR3",
+    "children" : [ {
+      "name" : "10020-MainThread",
+      "children" : [ {
+        "name" : "test_tc_002_add_product_and_verify",
+        "uid" : "b2e7c325151a9136",
+        "parentUid" : "90f5adc0e3c83f1ef661f5746aa58153",
+        "status" : "broken",
+        "time" : {
+          "start" : 1566034993713,
+          "stop" : 1566034997416,
+          "duration" : 3703
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_tc_001_invalid_login",
+        "uid" : "78ce717150784df1",
+        "parentUid" : "90f5adc0e3c83f1ef661f5746aa58153",
+        "status" : "passed",
+        "time" : {
+          "start" : 1566035013031,
+          "stop" : 1566035019100,
+          "duration" : 6069
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "90f5adc0e3c83f1ef661f5746aa58153"
+    }, {
+      "name" : "7968-MainThread",
+      "children" : [ {
+        "name" : "test_tc_002_add_product_and_verify",
+        "uid" : "5e94103bf524e467",
+        "parentUid" : "677a638b4fbef3e005316aa52d525100",
+        "status" : "broken",
+        "time" : {
+          "start" : 1566035091940,
+          "stop" : 1566035131137,
+          "duration" : 39197
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_tc_001_invalid_login",
+        "uid" : "4050491e8433d515",
+        "parentUid" : "677a638b4fbef3e005316aa52d525100",
+        "status" : "passed",
+        "time" : {
+          "start" : 1566035147506,
+          "stop" : 1566035151340,
+          "duration" : 3834
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "677a638b4fbef3e005316aa52d525100"
+    }, {
+      "name" : "2956-MainThread",
+      "children" : [ {
+        "name" : "test_tc_001_invalid_login",
+        "uid" : "92a78961c66963b5",
+        "parentUid" : "16b50b547e7682c98c0c84279ca749d6",
+        "status" : "broken",
+        "time" : {
+          "start" : 1566034709506,
+          "stop" : 1566034710086,
+          "duration" : 580
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_tc_002_add_product_and_verify",
+        "uid" : "b80f9e7db154cf1c",
+        "parentUid" : "16b50b547e7682c98c0c84279ca749d6",
+        "status" : "broken",
+        "time" : {
+          "start" : 1566034673631,
+          "stop" : 1566034675788,
+          "duration" : 2157
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "16b50b547e7682c98c0c84279ca749d6"
+    } ],
+    "uid" : "20f58f246004df388a98625f9e186941"
+  } ]
+}

@@ -1,0 +1,26 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "name" : "categories",
+  "children" : [ {
+    "name" : "Test defects",
+    "children" : [ {
+      "name" : "TypeError: can only concatenate str (not \"type\") to str",
+      "children" : [ {
+        "name" : "test_tc_002_add_product_and_verify",
+        "uid" : "b92d76d4cbe3cb3",
+        "parentUid" : "9683e8468bb281b98f8d4a657bbda991",
+        "status" : "broken",
+        "time" : {
+          "start" : 1566042591793,
+          "stop" : 1566042631288,
+          "duration" : 39495
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "9683e8468bb281b98f8d4a657bbda991"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  } ]
+}

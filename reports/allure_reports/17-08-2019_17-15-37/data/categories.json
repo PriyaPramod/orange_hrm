@@ -1,0 +1,39 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "name" : "categories",
+  "children" : [ {
+    "name" : "Test defects",
+    "children" : [ {
+      "name" : "selenium.common.exceptions.SessionNotCreatedException: Message: Unable to create new service: ChromeDriverService\nBuild info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'\nSystem info: host: 'DESKTOP-JAMBUR3', ip: '192.168.1.156', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'\nDriver info: driver.version: unknown\nStacktrace:\n    at org.openqa.selenium.grid.session.remote.ServicedSession$Factory.lambda$get$0 (ServicedSession.java:135)\n    at org.openqa.selenium.grid.session.remote.ServicedSession$Factory.apply (ServicedSession.java:152)\n    at org.openqa.selenium.remote.server.ActiveSessionFactory.lambda$apply$12 (ActiveSessionFactory.java:180)\n    at java.util.stream.ReferencePipeline$3$1.accept (None:-1)\n    at java.util.stream.ReferencePipeline$11$1.accept (None:-1)\n    at java.util.stream.ReferencePipeline$2$1.accept (None:-1)\n    at java.util.Spliterators$ArraySpliterator.tryAdvance (None:-1)\n    at java.util.stream.ReferencePipeline.forEachWithCancel (None:-1)\n    at java.util.stream.AbstractPipeline.copyIntoWithCancel (None:-1)\n    at java.util.stream.AbstractPipeline.copyInto (None:-1)\n    at java.util.stream.AbstractPipeline.wrapAndCopyInto (None:-1)\n    at java.util.stream.FindOps$FindOp.evaluateSequential (None:-1)\n    at java.util.stream.AbstractPipeline.evaluate (None:-1)\n    at java.util.stream.ReferencePipeline.findFirst (None:-1)\n    at org.openqa.selenium.remote.server.ActiveSessionFactory.apply (ActiveSessionFactory.java:183)\n    at org.openqa.selenium.remote.server.NewSessionPipeline.lambda$null$2 (NewSessionPipeline.java:66)\n    at java.util.stream.ReferencePipeline$3$1.accept (None:-1)\n    at java.util.stream.ReferencePipeline$2$1.accept (None:-1)\n    at java.util.Collections$2.tryAdvance (None:-1)\n    at java.util.stream.ReferencePipeline.forEachWithCancel (None:-1)\n    at java.util.stream.AbstractPipeline.copyIntoWithCancel (None:-1)\n    at java.util.stream.AbstractPipeline.copyInto (None:-1)\n    at java.util.stream.AbstractPipeline.wrapAndCopyInto (None:-1)\n    at java.util.stream.FindOps$FindOp.evaluateSequential (None:-1)\n    at java.util.stream.AbstractPipeline.evaluate (None:-1)\n    at java.util.stream.ReferencePipeline.findFirst (None:-1)\n    at org.openqa.selenium.remote.server.NewSessionPipeline.lambda$createNewSession$3 (NewSessionPipeline.java:69)\n    at java.util.stream.ReferencePipeline$3$1.accept (None:-1)\n    at java.util.stream.ReferencePipeline$3$1.accept (None:-1)\n    at java.util.stream.ReferencePipeline$3$1.accept (None:-1)\n    at java.util.stream.DistinctOps$1$2.accept (None:-1)\n    at java.util.stream.ReferencePipeline$2$1.accept (None:-1)\n    at java.util.stream.ReferencePipeline$3$1.accept (None:-1)\n    at java.util.stream.ReferencePipeline$2$1.accept (None:-1)\n    at java.util.stream.Streams$StreamBuilderImpl.tryAdvance (None:-1)\n    at java.util.stream.Streams$ConcatSpliterator.tryAdvance (None:-1)\n    at java.util.stream.ReferencePipeline.forEachWithCancel (None:-1)\n    at java.util.stream.AbstractPipeline.copyIntoWithCancel (None:-1)\n    at java.util.stream.AbstractPipeline.copyInto (None:-1)\n    at java.util.stream.AbstractPipeline.wrapAndCopyInto (None:-1)\n    at java.util.stream.FindOps$FindOp.evaluateSequential (None:-1)\n    at java.util.stream.AbstractPipeline.evaluate (None:-1)\n    at java.util.stream.ReferencePipeline.findFirst (None:-1)\n    at org.openqa.selenium.remote.server.NewSessionPipeline.createNewSession (NewSessionPipeline.java:72)\n    at org.openqa.selenium.remote.server.commandhandler.BeginSession.execute (BeginSession.java:65)\n    at org.openqa.selenium.remote.server.WebDriverServlet.lambda$handle$0 (WebDriverServlet.java:235)\n    at java.util.concurrent.Executors$RunnableAdapter.call (None:-1)\n    at java.util.concurrent.FutureTask.run (None:-1)\n    at java.util.concurrent.ThreadPoolExecutor.runWorker (None:-1)\n    at java.util.concurrent.ThreadPoolExecutor$Worker.run (None:-1)\n    at java.lang.Thread.run (None:-1)",
+      "children" : [ {
+        "name" : "test_tc_002_add_product_and_verify",
+        "uid" : "c7238b4913c8890",
+        "parentUid" : "fa8c8195d34d59825a48dd97ca36b259",
+        "status" : "broken",
+        "time" : {
+          "start" : 1566042335630,
+          "stop" : 1566042335630,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_tc_001_invalid_login",
+        "uid" : "1a36635a31769dc0",
+        "parentUid" : "fa8c8195d34d59825a48dd97ca36b259",
+        "status" : "broken",
+        "time" : {
+          "start" : 1566042336804,
+          "stop" : 1566042336804,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "fa8c8195d34d59825a48dd97ca36b259"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  } ]
+}

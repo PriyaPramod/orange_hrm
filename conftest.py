@@ -1,6 +1,6 @@
 import pytest
 from source.utilities import helper
-from source.utilities.webdriver_extension import start_browser
+from source.utilities.webdriver_manager import start_browser
 from source.utilities.properties import ReadConfig
 
 
@@ -22,6 +22,7 @@ def pytest_runtest_makereport(item, call):
 @pytest.fixture(scope='function', autouse=True)
 def set_up(request):
     driver = start_browser(ReadConfig.get_browser(), ReadConfig.get_url())
+
     if request is not None:
         request.node.driver = driver
     yield

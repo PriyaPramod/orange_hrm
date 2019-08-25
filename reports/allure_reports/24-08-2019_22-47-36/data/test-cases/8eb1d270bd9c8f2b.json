@@ -1,0 +1,274 @@
+{
+  "uid" : "8eb1d270bd9c8f2b",
+  "name" : "test_tc_002_add_product_and_verify",
+  "fullName" : "test_scripts.test_cart.test_cart.TestCart#test_tc_002_add_product_and_verify",
+  "historyId" : "3606d963eae4bdfb89717742b5b8800b",
+  "time" : {
+    "start" : 1566666982110,
+    "stop" : 1566667026368,
+    "duration" : 44258
+  },
+  "status" : "failed",
+  "statusMessage" : "AssertionError",
+  "statusTrace" : "self = <source.pages.dashboard_page.DashboardPage object at 0x095B5B50>\nby = 'css selector', value = '#add-to-cart-button'\n\n    def find_element(self, by, value):\n        try:\n>           web_element = self.driver.find_element(by, value)\n\nsource\\pages\\base_page.py:17: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <selenium.webdriver.chrome.webdriver.WebDriver (session=\"24bd6cfae819ebddcae463c2e4b38a6f\")>\nby = 'css selector', value = '#add-to-cart-button'\n\n    def find_element(self, by=By.ID, value=None):\n        \"\"\"\n        Find an element given a By strategy and locator. Prefer the find_element_by_* methods when\n        possible.\n    \n        :Usage:\n            element = driver.find_element(By.ID, 'foo')\n    \n        :rtype: WebElement\n        \"\"\"\n        if self.w3c:\n            if by == By.ID:\n                by = By.CSS_SELECTOR\n                value = '[id=\"%s\"]' % value\n            elif by == By.TAG_NAME:\n                by = By.CSS_SELECTOR\n            elif by == By.CLASS_NAME:\n                by = By.CSS_SELECTOR\n                value = \".%s\" % value\n            elif by == By.NAME:\n                by = By.CSS_SELECTOR\n                value = '[name=\"%s\"]' % value\n        return self.execute(Command.FIND_ELEMENT, {\n            'using': by,\n>           'value': value})['value']\n\nC:\\Users\\Jayapriyapramod\\AppData\\Local\\Programs\\Python\\Python37-32\\lib\\site-packages\\selenium\\webdriver\\remote\\webdriver.py:978: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <selenium.webdriver.chrome.webdriver.WebDriver (session=\"24bd6cfae819ebddcae463c2e4b38a6f\")>\ndriver_command = 'findElement'\nparams = {'using': 'css selector', 'value': '#add-to-cart-button'}\n\n    def execute(self, driver_command, params=None):\n        \"\"\"\n        Sends a command to be executed by a command.CommandExecutor.\n    \n        :Args:\n         - driver_command: The name of the command to execute as a string.\n         - params: A dictionary of named parameters to send with the command.\n    \n        :Returns:\n          The command's JSON response loaded into a dictionary object.\n        \"\"\"\n        if self.session_id is not None:\n            if not params:\n                params = {'sessionId': self.session_id}\n            elif 'sessionId' not in params:\n                params['sessionId'] = self.session_id\n    \n        params = self._wrap_value(params)\n        response = self.command_executor.execute(driver_command, params)\n        if response:\n>           self.error_handler.check_response(response)\n\nC:\\Users\\Jayapriyapramod\\AppData\\Local\\Programs\\Python\\Python37-32\\lib\\site-packages\\selenium\\webdriver\\remote\\webdriver.py:321: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <selenium.webdriver.remote.errorhandler.ErrorHandler object at 0x09597DF0>\nresponse = {'status': 404, 'value': '{\"value\":{\"error\":\"no such element\",\"message\":\"no such element: Unable to locate element: {\\...\\n\\\\tRtlGetAppContainerNamedObjectPath [0x777E7A94+228]\\\\n\\\\tRtlGetAppContainerNamedObjectPath [0x777E7A64+180]\\\\n\"}}'}\n\n    def check_response(self, response):\n        \"\"\"\n        Checks that a JSON response from the WebDriver does not have an error.\n    \n        :Args:\n         - response - The JSON response from the WebDriver server as a dictionary\n           object.\n    \n        :Raises: If the response contains an error message.\n        \"\"\"\n        status = response.get('status', None)\n        if status is None or status == ErrorCode.SUCCESS:\n            return\n        value = None\n        message = response.get(\"message\", \"\")\n        screen = response.get(\"screen\", \"\")\n        stacktrace = None\n        if isinstance(status, int):\n            value_json = response.get('value', None)\n            if value_json and isinstance(value_json, basestring):\n                import json\n                try:\n                    value = json.loads(value_json)\n                    if len(value.keys()) == 1:\n                        value = value['value']\n                    status = value.get('error', None)\n                    if status is None:\n                        status = value[\"status\"]\n                        message = value[\"value\"]\n                        if not isinstance(message, basestring):\n                            value = message\n                            message = message.get('message')\n                    else:\n                        message = value.get('message', None)\n                except ValueError:\n                    pass\n    \n        exception_class = ErrorInResponseException\n        if status in ErrorCode.NO_SUCH_ELEMENT:\n            exception_class = NoSuchElementException\n        elif status in ErrorCode.NO_SUCH_FRAME:\n            exception_class = NoSuchFrameException\n        elif status in ErrorCode.NO_SUCH_WINDOW:\n            exception_class = NoSuchWindowException\n        elif status in ErrorCode.STALE_ELEMENT_REFERENCE:\n            exception_class = StaleElementReferenceException\n        elif status in ErrorCode.ELEMENT_NOT_VISIBLE:\n            exception_class = ElementNotVisibleException\n        elif status in ErrorCode.INVALID_ELEMENT_STATE:\n            exception_class = InvalidElementStateException\n        elif status in ErrorCode.INVALID_SELECTOR \\\n                or status in ErrorCode.INVALID_XPATH_SELECTOR \\\n                or status in ErrorCode.INVALID_XPATH_SELECTOR_RETURN_TYPER:\n            exception_class = InvalidSelectorException\n        elif status in ErrorCode.ELEMENT_IS_NOT_SELECTABLE:\n            exception_class = ElementNotSelectableException\n        elif status in ErrorCode.ELEMENT_NOT_INTERACTABLE:\n            exception_class = ElementNotInteractableException\n        elif status in ErrorCode.INVALID_COOKIE_DOMAIN:\n            exception_class = InvalidCookieDomainException\n        elif status in ErrorCode.UNABLE_TO_SET_COOKIE:\n            exception_class = UnableToSetCookieException\n        elif status in ErrorCode.TIMEOUT:\n            exception_class = TimeoutException\n        elif status in ErrorCode.SCRIPT_TIMEOUT:\n            exception_class = TimeoutException\n        elif status in ErrorCode.UNKNOWN_ERROR:\n            exception_class = WebDriverException\n        elif status in ErrorCode.UNEXPECTED_ALERT_OPEN:\n            exception_class = UnexpectedAlertPresentException\n        elif status in ErrorCode.NO_ALERT_OPEN:\n            exception_class = NoAlertPresentException\n        elif status in ErrorCode.IME_NOT_AVAILABLE:\n            exception_class = ImeNotAvailableException\n        elif status in ErrorCode.IME_ENGINE_ACTIVATION_FAILED:\n            exception_class = ImeActivationFailedException\n        elif status in ErrorCode.MOVE_TARGET_OUT_OF_BOUNDS:\n            exception_class = MoveTargetOutOfBoundsException\n        elif status in ErrorCode.JAVASCRIPT_ERROR:\n            exception_class = JavascriptException\n        elif status in ErrorCode.SESSION_NOT_CREATED:\n            exception_class = SessionNotCreatedException\n        elif status in ErrorCode.INVALID_ARGUMENT:\n            exception_class = InvalidArgumentException\n        elif status in ErrorCode.NO_SUCH_COOKIE:\n            exception_class = NoSuchCookieException\n        elif status in ErrorCode.UNABLE_TO_CAPTURE_SCREEN:\n            exception_class = ScreenshotException\n        elif status in ErrorCode.ELEMENT_CLICK_INTERCEPTED:\n            exception_class = ElementClickInterceptedException\n        elif status in ErrorCode.INSECURE_CERTIFICATE:\n            exception_class = InsecureCertificateException\n        elif status in ErrorCode.INVALID_COORDINATES:\n            exception_class = InvalidCoordinatesException\n        elif status in ErrorCode.INVALID_SESSION_ID:\n            exception_class = InvalidSessionIdException\n        elif status in ErrorCode.UNKNOWN_METHOD:\n            exception_class = UnknownMethodException\n        else:\n            exception_class = WebDriverException\n        if value == '' or value is None:\n            value = response['value']\n        if isinstance(value, basestring):\n            if exception_class == ErrorInResponseException:\n                raise exception_class(response, value)\n            raise exception_class(value)\n        if message == \"\" and 'message' in value:\n            message = value['message']\n    \n        screen = None\n        if 'screen' in value:\n            screen = value['screen']\n    \n        stacktrace = None\n        if 'stackTrace' in value and value['stackTrace']:\n            stacktrace = []\n            try:\n                for frame in value['stackTrace']:\n                    line = self._value_or_default(frame, 'lineNumber', '')\n                    file = self._value_or_default(frame, 'fileName', '<anonymous>')\n                    if line:\n                        file = \"%s:%s\" % (file, line)\n                    meth = self._value_or_default(frame, 'methodName', '<anonymous>')\n                    if 'className' in frame:\n                        meth = \"%s.%s\" % (frame['className'], meth)\n                    msg = \"    at %s (%s)\"\n                    msg = msg % (meth, file)\n                    stacktrace.append(msg)\n            except TypeError:\n                pass\n        if exception_class == ErrorInResponseException:\n            raise exception_class(response, message)\n        elif exception_class == UnexpectedAlertPresentException:\n            alert_text = None\n            if 'data' in value:\n                alert_text = value['data'].get('text')\n            elif 'alert' in value:\n                alert_text = value['alert'].get('text')\n            raise exception_class(message, screen, stacktrace, alert_text)\n>       raise exception_class(message, screen, stacktrace)\nE       selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#add-to-cart-button\"}\nE         (Session info: chrome=76.0.3809.100)\n\nC:\\Users\\Jayapriyapramod\\AppData\\Local\\Programs\\Python\\Python37-32\\lib\\site-packages\\selenium\\webdriver\\remote\\errorhandler.py:242: NoSuchElementException\n\nDuring handling of the above exception, another exception occurred:\n\nself = <test_scripts.test_cart.test_cart.TestCart object at 0x09597930>\nrequest = <FixtureRequest for <Function test_tc_002_add_product_and_verify>>\n\n    def test_tc_002_add_product_and_verify(self, request):\n        product_name = excel.get_cell_value(constants.EXCEL_PATH, \"Cart\", 1, \"ProductName\")\n        success_message = excel.get_cell_value(constants.EXCEL_PATH, \"Cart\", 1, \"SuccessMessage\")\n        success_message_after_deleting = excel.get_cell_value(constants.EXCEL_PATH, \"Cart\", 1, \"SuccessMessageAfterDelete\")\n    \n        dashboard = pm.get_dashboard(request.node.driver)\n        cart = pm.get_cart(request.node.driver)\n    \n        dashboard.enter_product_name_to_search_box(product_name)\n        product_added = dashboard.get_product_name()\n        dashboard.select_product_to_add_to_cart()\n>       dashboard.click_on_add_to_cart()\n\ntest_scripts\\test_cart\\test_cart.py:18: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\nsource\\pages\\dashboard_page.py:32: in click_on_add_to_cart\n    self.click(self.__add_to_cart_button())\nsource\\pages\\dashboard_page.py:14: in __add_to_cart_button\n    def __add_to_cart_button(self): return self.find_element(By.CSS_SELECTOR, \"#add-to-cart-button\")\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <source.pages.dashboard_page.DashboardPage object at 0x095B5B50>\nby = 'css selector', value = '#add-to-cart-button'\n\n    def find_element(self, by, value):\n        try:\n            web_element = self.driver.find_element(by, value)\n            return web_element\n        except NoSuchElementException:\n            print(\"Web element not found: \"+\" Locator type: \", by, \" Locator value: \"+value)\n>           assert False\nE           AssertionError\n\nsource\\pages\\base_page.py:21: AssertionError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "set_property",
+    "time" : {
+      "start" : 1566666947650,
+      "stop" : 1566666947650,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "set_up",
+    "time" : {
+      "start" : 1566666947650,
+      "stop" : 1566666982086,
+      "duration" : 34436
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "AssertionError",
+    "statusTrace" : "self = <source.pages.dashboard_page.DashboardPage object at 0x095B5B50>\nby = 'css selector', value = '#add-to-cart-button'\n\n    def find_element(self, by, value):\n        try:\n>           web_element = self.driver.find_element(by, value)\n\nsource\\pages\\base_page.py:17: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <selenium.webdriver.chrome.webdriver.WebDriver (session=\"24bd6cfae819ebddcae463c2e4b38a6f\")>\nby = 'css selector', value = '#add-to-cart-button'\n\n    def find_element(self, by=By.ID, value=None):\n        \"\"\"\n        Find an element given a By strategy and locator. Prefer the find_element_by_* methods when\n        possible.\n    \n        :Usage:\n            element = driver.find_element(By.ID, 'foo')\n    \n        :rtype: WebElement\n        \"\"\"\n        if self.w3c:\n            if by == By.ID:\n                by = By.CSS_SELECTOR\n                value = '[id=\"%s\"]' % value\n            elif by == By.TAG_NAME:\n                by = By.CSS_SELECTOR\n            elif by == By.CLASS_NAME:\n                by = By.CSS_SELECTOR\n                value = \".%s\" % value\n            elif by == By.NAME:\n                by = By.CSS_SELECTOR\n                value = '[name=\"%s\"]' % value\n        return self.execute(Command.FIND_ELEMENT, {\n            'using': by,\n>           'value': value})['value']\n\nC:\\Users\\Jayapriyapramod\\AppData\\Local\\Programs\\Python\\Python37-32\\lib\\site-packages\\selenium\\webdriver\\remote\\webdriver.py:978: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <selenium.webdriver.chrome.webdriver.WebDriver (session=\"24bd6cfae819ebddcae463c2e4b38a6f\")>\ndriver_command = 'findElement'\nparams = {'using': 'css selector', 'value': '#add-to-cart-button'}\n\n    def execute(self, driver_command, params=None):\n        \"\"\"\n        Sends a command to be executed by a command.CommandExecutor.\n    \n        :Args:\n         - driver_command: The name of the command to execute as a string.\n         - params: A dictionary of named parameters to send with the command.\n    \n        :Returns:\n          The command's JSON response loaded into a dictionary object.\n        \"\"\"\n        if self.session_id is not None:\n            if not params:\n                params = {'sessionId': self.session_id}\n            elif 'sessionId' not in params:\n                params['sessionId'] = self.session_id\n    \n        params = self._wrap_value(params)\n        response = self.command_executor.execute(driver_command, params)\n        if response:\n>           self.error_handler.check_response(response)\n\nC:\\Users\\Jayapriyapramod\\AppData\\Local\\Programs\\Python\\Python37-32\\lib\\site-packages\\selenium\\webdriver\\remote\\webdriver.py:321: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <selenium.webdriver.remote.errorhandler.ErrorHandler object at 0x09597DF0>\nresponse = {'status': 404, 'value': '{\"value\":{\"error\":\"no such element\",\"message\":\"no such element: Unable to locate element: {\\...\\n\\\\tRtlGetAppContainerNamedObjectPath [0x777E7A94+228]\\\\n\\\\tRtlGetAppContainerNamedObjectPath [0x777E7A64+180]\\\\n\"}}'}\n\n    def check_response(self, response):\n        \"\"\"\n        Checks that a JSON response from the WebDriver does not have an error.\n    \n        :Args:\n         - response - The JSON response from the WebDriver server as a dictionary\n           object.\n    \n        :Raises: If the response contains an error message.\n        \"\"\"\n        status = response.get('status', None)\n        if status is None or status == ErrorCode.SUCCESS:\n            return\n        value = None\n        message = response.get(\"message\", \"\")\n        screen = response.get(\"screen\", \"\")\n        stacktrace = None\n        if isinstance(status, int):\n            value_json = response.get('value', None)\n            if value_json and isinstance(value_json, basestring):\n                import json\n                try:\n                    value = json.loads(value_json)\n                    if len(value.keys()) == 1:\n                        value = value['value']\n                    status = value.get('error', None)\n                    if status is None:\n                        status = value[\"status\"]\n                        message = value[\"value\"]\n                        if not isinstance(message, basestring):\n                            value = message\n                            message = message.get('message')\n                    else:\n                        message = value.get('message', None)\n                except ValueError:\n                    pass\n    \n        exception_class = ErrorInResponseException\n        if status in ErrorCode.NO_SUCH_ELEMENT:\n            exception_class = NoSuchElementException\n        elif status in ErrorCode.NO_SUCH_FRAME:\n            exception_class = NoSuchFrameException\n        elif status in ErrorCode.NO_SUCH_WINDOW:\n            exception_class = NoSuchWindowException\n        elif status in ErrorCode.STALE_ELEMENT_REFERENCE:\n            exception_class = StaleElementReferenceException\n        elif status in ErrorCode.ELEMENT_NOT_VISIBLE:\n            exception_class = ElementNotVisibleException\n        elif status in ErrorCode.INVALID_ELEMENT_STATE:\n            exception_class = InvalidElementStateException\n        elif status in ErrorCode.INVALID_SELECTOR \\\n                or status in ErrorCode.INVALID_XPATH_SELECTOR \\\n                or status in ErrorCode.INVALID_XPATH_SELECTOR_RETURN_TYPER:\n            exception_class = InvalidSelectorException\n        elif status in ErrorCode.ELEMENT_IS_NOT_SELECTABLE:\n            exception_class = ElementNotSelectableException\n        elif status in ErrorCode.ELEMENT_NOT_INTERACTABLE:\n            exception_class = ElementNotInteractableException\n        elif status in ErrorCode.INVALID_COOKIE_DOMAIN:\n            exception_class = InvalidCookieDomainException\n        elif status in ErrorCode.UNABLE_TO_SET_COOKIE:\n            exception_class = UnableToSetCookieException\n        elif status in ErrorCode.TIMEOUT:\n            exception_class = TimeoutException\n        elif status in ErrorCode.SCRIPT_TIMEOUT:\n            exception_class = TimeoutException\n        elif status in ErrorCode.UNKNOWN_ERROR:\n            exception_class = WebDriverException\n        elif status in ErrorCode.UNEXPECTED_ALERT_OPEN:\n            exception_class = UnexpectedAlertPresentException\n        elif status in ErrorCode.NO_ALERT_OPEN:\n            exception_class = NoAlertPresentException\n        elif status in ErrorCode.IME_NOT_AVAILABLE:\n            exception_class = ImeNotAvailableException\n        elif status in ErrorCode.IME_ENGINE_ACTIVATION_FAILED:\n            exception_class = ImeActivationFailedException\n        elif status in ErrorCode.MOVE_TARGET_OUT_OF_BOUNDS:\n            exception_class = MoveTargetOutOfBoundsException\n        elif status in ErrorCode.JAVASCRIPT_ERROR:\n            exception_class = JavascriptException\n        elif status in ErrorCode.SESSION_NOT_CREATED:\n            exception_class = SessionNotCreatedException\n        elif status in ErrorCode.INVALID_ARGUMENT:\n            exception_class = InvalidArgumentException\n        elif status in ErrorCode.NO_SUCH_COOKIE:\n            exception_class = NoSuchCookieException\n        elif status in ErrorCode.UNABLE_TO_CAPTURE_SCREEN:\n            exception_class = ScreenshotException\n        elif status in ErrorCode.ELEMENT_CLICK_INTERCEPTED:\n            exception_class = ElementClickInterceptedException\n        elif status in ErrorCode.INSECURE_CERTIFICATE:\n            exception_class = InsecureCertificateException\n        elif status in ErrorCode.INVALID_COORDINATES:\n            exception_class = InvalidCoordinatesException\n        elif status in ErrorCode.INVALID_SESSION_ID:\n            exception_class = InvalidSessionIdException\n        elif status in ErrorCode.UNKNOWN_METHOD:\n            exception_class = UnknownMethodException\n        else:\n            exception_class = WebDriverException\n        if value == '' or value is None:\n            value = response['value']\n        if isinstance(value, basestring):\n            if exception_class == ErrorInResponseException:\n                raise exception_class(response, value)\n            raise exception_class(value)\n        if message == \"\" and 'message' in value:\n            message = value['message']\n    \n        screen = None\n        if 'screen' in value:\n            screen = value['screen']\n    \n        stacktrace = None\n        if 'stackTrace' in value and value['stackTrace']:\n            stacktrace = []\n            try:\n                for frame in value['stackTrace']:\n                    line = self._value_or_default(frame, 'lineNumber', '')\n                    file = self._value_or_default(frame, 'fileName', '<anonymous>')\n                    if line:\n                        file = \"%s:%s\" % (file, line)\n                    meth = self._value_or_default(frame, 'methodName', '<anonymous>')\n                    if 'className' in frame:\n                        meth = \"%s.%s\" % (frame['className'], meth)\n                    msg = \"    at %s (%s)\"\n                    msg = msg % (meth, file)\n                    stacktrace.append(msg)\n            except TypeError:\n                pass\n        if exception_class == ErrorInResponseException:\n            raise exception_class(response, message)\n        elif exception_class == UnexpectedAlertPresentException:\n            alert_text = None\n            if 'data' in value:\n                alert_text = value['data'].get('text')\n            elif 'alert' in value:\n                alert_text = value['alert'].get('text')\n            raise exception_class(message, screen, stacktrace, alert_text)\n>       raise exception_class(message, screen, stacktrace)\nE       selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#add-to-cart-button\"}\nE         (Session info: chrome=76.0.3809.100)\n\nC:\\Users\\Jayapriyapramod\\AppData\\Local\\Programs\\Python\\Python37-32\\lib\\site-packages\\selenium\\webdriver\\remote\\errorhandler.py:242: NoSuchElementException\n\nDuring handling of the above exception, another exception occurred:\n\nself = <test_scripts.test_cart.test_cart.TestCart object at 0x09597930>\nrequest = <FixtureRequest for <Function test_tc_002_add_product_and_verify>>\n\n    def test_tc_002_add_product_and_verify(self, request):\n        product_name = excel.get_cell_value(constants.EXCEL_PATH, \"Cart\", 1, \"ProductName\")\n        success_message = excel.get_cell_value(constants.EXCEL_PATH, \"Cart\", 1, \"SuccessMessage\")\n        success_message_after_deleting = excel.get_cell_value(constants.EXCEL_PATH, \"Cart\", 1, \"SuccessMessageAfterDelete\")\n    \n        dashboard = pm.get_dashboard(request.node.driver)\n        cart = pm.get_cart(request.node.driver)\n    \n        dashboard.enter_product_name_to_search_box(product_name)\n        product_added = dashboard.get_product_name()\n        dashboard.select_product_to_add_to_cart()\n>       dashboard.click_on_add_to_cart()\n\ntest_scripts\\test_cart\\test_cart.py:18: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\nsource\\pages\\dashboard_page.py:32: in click_on_add_to_cart\n    self.click(self.__add_to_cart_button())\nsource\\pages\\dashboard_page.py:14: in __add_to_cart_button\n    def __add_to_cart_button(self): return self.find_element(By.CSS_SELECTOR, \"#add-to-cart-button\")\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <source.pages.dashboard_page.DashboardPage object at 0x095B5B50>\nby = 'css selector', value = '#add-to-cart-button'\n\n    def find_element(self, by, value):\n        try:\n            web_element = self.driver.find_element(by, value)\n            return web_element\n        except NoSuchElementException:\n            print(\"Web element not found: \"+\" Locator type: \", by, \" Locator value: \"+value)\n>           assert False\nE           AssertionError\n\nsource\\pages\\base_page.py:21: AssertionError",
+    "steps" : [ {
+      "name" : "enter_product_name_to_search_box",
+      "time" : {
+        "start" : 1566666984686,
+        "stop" : 1566666994545,
+        "duration" : 9859
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "product_name",
+        "value" : "'One Plus 7 Pro'"
+      } ],
+      "stepsCount" : 0,
+      "hasContent" : true,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "get_product_name",
+      "time" : {
+        "start" : 1566666994545,
+        "stop" : 1566666995566,
+        "duration" : 1021
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "select_product_to_add_to_cart",
+      "time" : {
+        "start" : 1566666995567,
+        "stop" : 1566666996179,
+        "duration" : 612
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "click_on_add_to_cart",
+      "time" : {
+        "start" : 1566666996179,
+        "stop" : 1566667026223,
+        "duration" : 30044
+      },
+      "status" : "failed",
+      "statusMessage" : "AssertionError\n",
+      "statusTrace" : "  File \"C:\\Users\\Jayapriyapramod\\AppData\\Local\\Programs\\Python\\Python37-32\\lib\\site-packages\\allure_commons\\_allure.py\", line 157, in impl\n    return func(*a, **kw)\n  File \"C:\\Automation_Development_A\\orange_hrm\\source\\pages\\dashboard_page.py\", line 32, in click_on_add_to_cart\n    self.click(self.__add_to_cart_button())\n  File \"C:\\Automation_Development_A\\orange_hrm\\source\\pages\\dashboard_page.py\", line 14, in __add_to_cart_button\n    def __add_to_cart_button(self): return self.find_element(By.CSS_SELECTOR, \"#add-to-cart-button\")\n  File \"C:\\Automation_Development_A\\orange_hrm\\source\\pages\\base_page.py\", line 21, in find_element\n    assert False\n",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : true,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "3be647c77f796729",
+      "name" : "stdout",
+      "source" : "3be647c77f796729.txt",
+      "type" : "text/plain",
+      "size" : 88
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 4,
+    "hasContent" : true,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true
+  },
+  "afterStages" : [ {
+    "name" : "set_property::0",
+    "time" : {
+      "start" : 1566667056498,
+      "stop" : 1566667056515,
+      "duration" : 17
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "set_up::0",
+    "time" : {
+      "start" : 1566667026634,
+      "stop" : 1566667030812,
+      "duration" : 4178
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "edca1140fb8131d5",
+      "name" : "test_tc_002_add_product_and_verify",
+      "source" : "edca1140fb8131d5.png",
+      "type" : "image/png",
+      "size" : 271830
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "test_scripts.test_cart"
+  }, {
+    "name" : "suite",
+    "value" : "test_cart"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestCart"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-JAMBUR3"
+  }, {
+    "name" : "thread",
+    "value" : "15192-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_scripts.test_cart.test_cart"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "1312bb6ce2572bca",
+      "status" : "broken",
+      "statusDetails" : "TypeError: can only concatenate str (not \"type\") to str",
+      "time" : {
+        "start" : 1566666573521,
+        "stop" : 1566666625182,
+        "duration" : 51661
+      }
+    }, {
+      "uid" : "6d4995fffa41d848",
+      "status" : "broken",
+      "statusDetails" : "TypeError: can only concatenate str (not \"type\") to str",
+      "time" : {
+        "start" : 1566042591793,
+        "stop" : 1566042631288,
+        "duration" : 39495
+      }
+    }, {
+      "uid" : "6408f604bf8b9a25",
+      "status" : "broken",
+      "statusDetails" : "selenium.common.exceptions.SessionNotCreatedException: Message: Unable to create new service: ChromeDriverService\nBuild info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'\nSystem info: host: 'DESKTOP-JAMBUR3', ip: '192.168.1.156', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'\nDriver info: driver.version: unknown\nStacktrace:\n    at org.openqa.selenium.grid.session.remote.ServicedSession$Factory.lambda$get$0 (ServicedSession.java:135)\n    at org.openqa.selenium.grid.session.remote.ServicedSession$Factory.apply (ServicedSession.java:152)\n    at org.openqa.selenium.remote.server.ActiveSessionFactory.lambda$apply$12 (ActiveSessionFactory.java:180)\n    at java.util.stream.ReferencePipeline$3$1.accept (None:-1)\n    at java.util.stream.ReferencePipeline$11$1.accept (None:-1)\n    at java.util.stream.ReferencePipeline$2$1.accept (None:-1)\n    at java.util.Spliterators$ArraySpliterator.tryAdvance (None:-1)\n    at java.util.stream.ReferencePipeline.forEachWithCancel (None:-1)\n    at java.util.stream.AbstractPipeline.copyIntoWithCancel (None:-1)\n    at java.util.stream.AbstractPipeline.copyInto (None:-1)\n    at java.util.stream.AbstractPipeline.wrapAndCopyInto (None:-1)\n    at java.util.stream.FindOps$FindOp.evaluateSequential (None:-1)\n    at java.util.stream.AbstractPipeline.evaluate (None:-1)\n    at java.util.stream.ReferencePipeline.findFirst (None:-1)\n    at org.openqa.selenium.remote.server.ActiveSessionFactory.apply (ActiveSessionFactory.java:183)\n    at org.openqa.selenium.remote.server.NewSessionPipeline.lambda$null$2 (NewSessionPipeline.java:66)\n    at java.util.stream.ReferencePipeline$3$1.accept (None:-1)\n    at java.util.stream.ReferencePipeline$2$1.accept (None:-1)\n    at java.util.Collections$2.tryAdvance (None:-1)\n    at java.util.stream.ReferencePipeline.forEachWithCancel (None:-1)\n    at java.util.stream.AbstractPipeline.copyIntoWithCancel (None:-1)\n    at java.util.stream.AbstractPipeline.copyInto (None:-1)\n    at java.util.stream.AbstractPipeline.wrapAndCopyInto (None:-1)\n    at java.util.stream.FindOps$FindOp.evaluateSequential (None:-1)\n    at java.util.stream.AbstractPipeline.evaluate (None:-1)\n    at java.util.stream.ReferencePipeline.findFirst (None:-1)\n    at org.openqa.selenium.remote.server.NewSessionPipeline.lambda$createNewSession$3 (NewSessionPipeline.java:69)\n    at java.util.stream.ReferencePipeline$3$1.accept (None:-1)\n    at java.util.stream.ReferencePipeline$3$1.accept (None:-1)\n    at java.util.stream.ReferencePipeline$3$1.accept (None:-1)\n    at java.util.stream.DistinctOps$1$2.accept (None:-1)\n    at java.util.stream.ReferencePipeline$2$1.accept (None:-1)\n    at java.util.stream.ReferencePipeline$3$1.accept (None:-1)\n    at java.util.stream.ReferencePipeline$2$1.accept (None:-1)\n    at java.util.stream.Streams$StreamBuilderImpl.tryAdvance (None:-1)\n    at java.util.stream.Streams$ConcatSpliterator.tryAdvance (None:-1)\n    at java.util.stream.ReferencePipeline.forEachWithCancel (None:-1)\n    at java.util.stream.AbstractPipeline.copyIntoWithCancel (None:-1)\n    at java.util.stream.AbstractPipeline.copyInto (None:-1)\n    at java.util.stream.AbstractPipeline.wrapAndCopyInto (None:-1)\n    at java.util.stream.FindOps$FindOp.evaluateSequential (None:-1)\n    at java.util.stream.AbstractPipeline.evaluate (None:-1)\n    at java.util.stream.ReferencePipeline.findFirst (None:-1)\n    at org.openqa.selenium.remote.server.NewSessionPipeline.createNewSession (NewSessionPipeline.java:72)\n    at org.openqa.selenium.remote.server.commandhandler.BeginSession.execute (BeginSession.java:65)\n    at org.openqa.selenium.remote.server.WebDriverServlet.lambda$handle$0 (WebDriverServlet.java:235)\n    at java.util.concurrent.Executors$RunnableAdapter.call (None:-1)\n    at java.util.concurrent.FutureTask.run (None:-1)\n    at java.util.concurrent.ThreadPoolExecutor.runWorker (None:-1)\n    at java.util.concurrent.ThreadPoolExecutor$Worker.run (None:-1)\n    at java.lang.Thread.run (None:-1)",
+      "time" : {
+        "start" : 1566042335630,
+        "stop" : 1566042335630,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "4dc43542c5f7ece8",
+      "status" : "broken",
+      "statusDetails" : "TypeError: can only concatenate str (not \"type\") to str",
+      "time" : {
+        "start" : 1566039405616,
+        "stop" : 1566039469423,
+        "duration" : 63807
+      }
+    }, {
+      "uid" : "9762318b135f7949",
+      "status" : "broken",
+      "statusDetails" : "TypeError: can only concatenate str (not \"type\") to str",
+      "time" : {
+        "start" : 1566035091940,
+        "stop" : 1566035131137,
+        "duration" : 39197
+      }
+    }, {
+      "uid" : "f690914c17713357",
+      "status" : "broken",
+      "statusDetails" : "xlrd.biffh.XLRDError: No sheet named <'cart'>",
+      "time" : {
+        "start" : 1566034993713,
+        "stop" : 1566034997416,
+        "duration" : 3703
+      }
+    }, {
+      "uid" : "4fec238962a6f19c",
+      "status" : "broken",
+      "statusDetails" : "xlrd.biffh.XLRDError: No sheet named <'cart'>",
+      "time" : {
+        "start" : 1566034673631,
+        "stop" : 1566034675788,
+        "duration" : 2157
+      }
+    } ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "8eb1d270bd9c8f2b.json",
+  "parameterValues" : [ ]
+}

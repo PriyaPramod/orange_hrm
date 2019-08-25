@@ -5,6 +5,7 @@ from datetime import datetime
 
 
 class ReportPlugin:
+
     def pytest_sessionfinish(self):
         allure_report_folder = constants.ALLURE_REPORT + datetime.now().strftime('%d-%m-%Y_%H-%M-%S')
         command = "allure generate "+constants.ALLURE_RESULTS + " --output " + allure_report_folder
